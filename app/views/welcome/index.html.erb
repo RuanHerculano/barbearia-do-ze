@@ -1,0 +1,14 @@
+<h1>Pagina principal</h1>
+
+<ul>
+    <% if user_signed_in? %>
+        <li><%= link_to("Sair", destroy_user_session_path, method: :delete) %></li>
+    <% else %>
+        <li><%= link_to("Cadastro de novo usuario", new_user_registration_path) %></li>
+        <li><%= link_to("Logar", new_user_session_path)%></li>
+    <% end %>
+</ul>
+
+<ul>
+    <li><%= link_to "Clientes", customers_path %></li>
+</ul>
