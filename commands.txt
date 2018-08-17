@@ -1,0 +1,15 @@
+rails new barbearia-do-ze --database=postgresql
+
+rails generate scaffold
+    Customers
+        name:string date_of_birth:date cpf:string amount_of_haircuts:integer
+
+sudo -u postgres createuser -s $(whoami); createdb $(whoami)
+
+add to gemfile: gem 'devise', '~> 4.2'
+
+rails generate devise:install
+
+rails generate devise MODEL
+
+before_action :authenticate_user!
